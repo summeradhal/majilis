@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html ng-app="majilisApp">
+<head>
+	<title></title>
+<!-- boostrap -->
+</script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+	<!-- angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
+	<script src="https://code.angularjs.org/1.5.8/angular-animate.js"></script>
+	<script src="https://code.angularjs.org/1.5.8/angular-touch.js"></script>
+	<script src="js/ui-bootstrap-tpls-2.3.1.min.js" ></script>
+
+
+
+	<!-- controllers -->
+	<script type="text/javascript" src="js/majilisCtrl.js"></script>
+
+
+
+	<!-- CSS -->
+
+
+<style>
+.nav{
+	background-color: #0A122A;
+	color: #fff;
+}
+.navbar-nav li a {
+	color: #fff;
+}
+
+.body{
+	background-color:#FBFAF8;
+}
+
+.sLogo img{
+	margin-bottom: 5%;
+	margin-top: 5%;
+
+	width: 20%;
+	height: 20%;
+}
+
+	footer{
+		display:inline-block;
+		width:100%;
+		height:100%;
+
+		background-color:#F8F7F7;
+	}
+
+	footer h3{
+		padding-left:15%;
+
+	}
+
+</style>
+
+
+</head>
+<body ng-controller="majilisCtrl">
+
+<!-- NAVBAR -->
+<nav class="nav">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false" class="navbar-toggle collapsed">
+				<span class="sr-only"> Toggle Navigation</span>
+				<span class="icon-bar""></span>
+				<span class="icon-bar""></span>
+				<span class="icon-bar""></span>
+			</button>
+			<div class="sLogo">
+				<h1>
+				<a href="#/" class="navbar-brand"></a>
+				Majilis
+				</h1>
+			</div>
+		</div>
+			<div id="navbar-collapse-1" class="collapse navbar-collapse">
+				  <ul class="nav navbar-nav navbar-right">
+						<li>
+							<a ng-href="#/">Home</a>
+						</li>
+						
+		             <!--    <li ng-hide="loggedIn">
+		                    <a ng-href="#/updates">Updates</a>
+		                </li>  
+		                 
+		                <li ng-hide="loggedIn">
+		                    <a ng-href="#/chat">Chat</a>
+		                </li>
+		                <li ng-hide="loggedIn">
+		                    <a ng-href="#/ideas">Ideas</a>
+		                </li>   --> 
+		                <!-- <li>   
+		                	<a ng-href="#/news">News</a>
+		                </li>  --> 
+
+		                <li>
+		                	<a ng-href="#/clubs">Clubs</a>
+		                </li>
+					  <li>
+						  <a ng-href="#/forum">Forum</a>
+					  </li>
+					  <li>
+		                	<a ng-href="#/trending">Trending</a>
+		                </li>
+					  <li>
+						  <a ng-href="#/login">Sign In</a>
+					  </li>
+
+
+				  </ul>
+			</div>	
+	</div>
+</nav>
+
+
+<!-- View -->
+<div id="views" ng-view></div>
+
+
+<footer>
+	<div class="about">
+		<h3>About</h3>
+	</div>
+	<div class="contact">
+		<h3>Contact</h3>
+	</div>
+</footer>
+
+</body>
+
+</html>
+
+
+

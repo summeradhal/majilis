@@ -1,0 +1,20 @@
+.title-header{
+    padding-left:13%;
+    padding-top:6%;
+}
+
+.card-img{
+    width:50%;
+    height:50%;
+}
+
+.club-container{
+    width:100%;
+    padding:5% 20% 20% 20%;
+
+}
+
+.card{
+    padding-left:2%;
+    border:1px solid #eee;
+}

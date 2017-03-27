@@ -1,0 +1,23 @@
+.registration-container{
+
+    padding-top:5%;
+    padding-left:40%;
+    padding-bottom:50%;
+    padding-right:40%;
+
+
+}
+
+.registration{
+    border: 1px solid black;
+    padding: 5% 10% 15% 5%;
+}
+.registration-input {
+    width:100%;
+    text-align:center;
+    margin:auto;
+}
+
+.registration-input .registration-title{
+
+}

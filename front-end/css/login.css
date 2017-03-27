@@ -1,0 +1,23 @@
+.login-container{
+
+    padding-top:5%;
+    padding-left:40%;
+    padding-bottom:50%;
+    padding-right:40%;
+
+
+}
+
+.login{
+    border: 1px solid black;
+    padding: 5% 10% 15% 5%;
+}
+.login-input {
+    width:100%;
+    text-align:center;
+   margin:auto;
+}
+
+.login-input .login-title{
+    background-color:#0A122A;
+}

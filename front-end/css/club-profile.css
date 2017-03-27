@@ -1,0 +1,26 @@
+.top-clubprofile{
+
+    width:100%;
+}
+
+
+.top-clubprofile img{
+    width:100%;
+    height:50vh;
+
+}
+
+ .clubprofile-info{
+     padding-top:2%;
+    text-align: center;
+}
+
+.clubprofile-info button{
+    margin-left:46%;
+    margin-top:1%;
+    margin-bottom:3%;
+}
+
+.clubprofile-container{
+    padding-left:25%;
+}
