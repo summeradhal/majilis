@@ -191,6 +191,7 @@ router.get('/clubInfo',function(req,res,next){
 router.post('/clubProfileInfo',function(req,res,next){
     console.log("in the club info portion")
     var clubName=req.body.clubName;
+    console.log('club name is')
     console.log(clubName.clubName);
     Club.findOne({'name': clubName})
         .exec(function(err,docs){

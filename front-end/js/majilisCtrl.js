@@ -103,14 +103,14 @@ majilisApp.controller('clubCreateCtrl',function($scope,$http,$route, $routeParam
 })
 
 majilisApp.controller('clubProfileCtrl',function($scope,$http,$route, $routeParams, $location,$localStorage){
-
+    var url = "http://localhost:3000";
     console.log("club profile");
     $scope.clubProfileTabs= {
         about:true,
         forum:false,
         media:false
     } ;
-    console.log($scope.clubProfileTabs.about);
+
 
     $scope.clubProfileTabs=function(tab){
 
@@ -141,9 +141,9 @@ majilisApp.controller('clubProfileCtrl',function($scope,$http,$route, $routePara
         }
     }
     console.log("hihi "+$localStorage.clubName);
-
+    var clubNameHere=$localStorage.clubName;
     $http.post(url + '/clubProfileInfo',{
-        clubName:$localStorage.clubName
+        clubName:clubNameHere
     })
         .then(function success(rspns) {
 
