@@ -9,17 +9,23 @@
 
 <div class="title-header">
     <h1>Clubs</h1>
+    <a  href="#/clubCreate"> <button type="button" class="btn btn-primary">+Create</button></a>
 </div>
 
-<div class="club-container">
-    <div class="club">
-        <div class="card" style="width: 20rem;">
-            <img class="card-img" src="images/camera.jpg" alt="Card image cap">
-            <div class="card-block">
-                <h4 class="card-title">Top Movies</h4>
-                <p class="card-text">This club talks about blah blah blah blah</p>
-                <a href="#/clubProfile" class="btn btn-primary">View</a>
-            </div>
+<div class="row">
+    <div class="club-container" ng-repeat="club in clubs" >
+
+          <div class="club">
+            <div class="col-xs-2 col-md-2">
+             <div class="card" style="width: 20rem;">
+               <img class="card-img" src="images/camera.jpg" alt="Card image cap">
+                 <div class="card-block">
+                     <h4 class="card-title">{{club.name}}</h4>
+                     <p class="card-text">{{club.about}}</p>
+                     <a href="#/clubProfile/{{club.name}}" ng-click="submitClubProfile(club.name)" class="btn btn-primary">View</a>
+                 </div>
+             </div>
+          </div>
         </div>
     </div>
 </div>

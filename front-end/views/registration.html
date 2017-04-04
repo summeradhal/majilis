@@ -9,23 +9,26 @@
 
 <div class="registration-container">
     <div class="registration">
-        <div class="registration-title">
-            <h2>register</h2>
-        </div>
-        <div class="registration-input">
-            <div class="username-input">
-                <h3>username</h3>
-                <input type="text" class="form-control" placeholder="username" aria-describedby="basic-addon1" ng-model="user.username">
+        <form class="form-horizontal"  ng-submit="register()">
+            <div class="registration-title">
+                <h2>register</h2>
             </div>
             <div class="registration-input">
-                <h3>email</h3>
-                <input type="email" class="form-control" placeholder="email" aria-describedby="basic-addon1" ng-model="user.email">
+                <div class="username-input">
+                    <h3>username</h3>
+                    <input type="text" class="form-control" placeholder="username" aria-describedby="basic-addon1" ng-model="user.username">
+                </div>
+                <div class="registration-input">
+                    <h3>email</h3>
+                    <input type="email" class="form-control" placeholder="email" aria-describedby="basic-addon1" ng-model="user.email">
+                </div>
+                <div class="registration-input">
+                    <h3>password</h3>
+                    <input type="password" class="form-control" placeholder="password" aria-describedby="basic-addon1" ng-model="user.password">
+                </div>
             </div>
-            <div class="registration-input">
-                <h3>password</h3>
-                <input type="password" class="form-control" placeholder="password" aria-describedby="basic-addon1" ng-model="user.password">
-            </div>
-        </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
 </div>
 </body>

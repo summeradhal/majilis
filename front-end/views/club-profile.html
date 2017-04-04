@@ -11,11 +11,11 @@
     <div class="row">
         <div class="top-clubprofile col-xs-12 col-md-12">
             <div class="clubprofile-img col-xs-12 col-md-12">
-                <a href=""> <img class="col-xs-12 col-md-12" src="/images/camera.jpg"></a>
+                <a href=""> <img class="col-xs-12 col-md-12" src="images/camera.jpg"></a>
             </div>
             <div class="clubprofile-info col-xs-12 col-md-12">
                 <div class="clubprofile-title col-xs-12 col-md-12">
-                   <h2>Feminist Book Club</h2>
+                   <h2>{{clubs.name}}</h2>
                 </div>
                 <div class="members col-xs-12 col-md-12">
                     <h4>22 members</h4>
@@ -39,10 +39,10 @@
                         <a  ng-click="clubProfileTabs('media')"><li><h3>Media</h3></li></a>
                     </ul>
                 </div> <!--end tabs for club profile-->
-                <div class="clubprofile-panel col-xs-12 col-md-12">
+                <div class="clubprofile-panel col-xs-8 col-md-8">
                     <div class="clubprofile-about" ng-show="clubProfileTabs.about">
                        <h3>About Us:</h3>
-                        <p>We read feminist literature.</p>
+                        <p>{{clubs.about}}</p>
                         <h3>Current:</h3>
                         <p>Woman,Race, and Class</p>
                     </div>

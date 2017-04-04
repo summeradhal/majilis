@@ -10,11 +10,13 @@
 
 .club-container{
     width:100%;
-    padding:5% 20% 20% 20%;
+    /*padding:5% 20% 20% 20%;*/
 
 }
 
 .card{
     padding-left:2%;
     border:1px solid #eee;
+    display:inline-block;
+    padding:5% 20% 20% 20%;
 }
