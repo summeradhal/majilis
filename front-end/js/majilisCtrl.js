@@ -36,6 +36,10 @@ majilisApp.config(function($routeProvider,$locationProvider){
         templateUrl:'views/forum.html',
         controller:'forumCtrl'
     })
+    $routeProvider.when('/createThread',{
+        templateUrl:'views/thread-create.html',
+        controller:'createThreadCtrl'
+    })
     $routeProvider.when('/forum-page',{
         templateUrl:'views/forum-page.html',
         controller:'forumPageCtrl'
@@ -224,14 +228,25 @@ majilisApp.controller('registerCtrl',function($scope,$http,$route, $routeParams,
 
     };
 
-});
+})
 
-majilisApp.controller('forumCtrl',function($scope,$http,$route, $routeParams, $location){
+majilisApp.controller('forumCtrl',function($scope,$http,$route, $routeParams, $location,$localStorage){
+
 
     console.log("hi");
 
 })
 
+majilisApp.controller('createThreadCtrl',function($scope,$http,$route, $routeParams, $location,thread,$localStorage){
+    $scope.thread = {};
+    $scope.thread.username = $localStorage.username;
+    $scope.submitNewThread = function() {
+        console.log($scope.thread);
+        thread.threadService($scope.thread);
+    };
+    console.log("create thread  page");
+
+})
 majilisApp.controller('forumPageCtrl',function($scope,$http,$route, $routeParams, $location){
 
     console.log("forum page");
@@ -273,3 +288,56 @@ majilisApp.controller('clubCtrl',function($scope,$http,$route, $routeParams, $lo
 
     })
 
+    //create a new thread
+    .service('thread',function($http,$localStorage){
+
+        this.threadService=function(thread){
+            var url = "http://localhost:3000";
+
+            console.log(thread);
+            console.log("thread");
+
+            $http.post(url + '/thread',{
+
+                thread:thread
+
+            })
+                .then(function succeess(rspns) {
+                    return rspns;
+                    $location.path('/');
+
+                }, function fail(rspns) {
+                    return rspns;
+
+                })
+
+        }
+
+    })
+
+    //discussion comments
+    .service('discussionPosts',function($http,$localStorage){
+
+        this.discussionPostsService=function(discussionPosts){
+            var url = "http://localhost:3000";
+
+            console.log(club);
+            console.log("discussion");
+
+            $http.post(url + '/discussionPosts',{
+
+               discussionPosts:discussionPosts
+
+            })
+                .then(function succeess(rspns) {
+                    return rspns;
+                    $location.path('/');
+
+                }, function fail(rspns) {
+                    return rspns;
+
+                })
+
+        }
+
+    })

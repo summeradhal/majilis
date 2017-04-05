@@ -5,8 +5,8 @@ var mongoose = require('mongoose');
 // console.log(mongoCreds.username)
 var User = require('../models/user');
 var Club = require('../models/club');
-// var EventPost = require('../models/eventPost');
-// var EventComments = require('../models/eventComments');
+var DiscussionPost = require('../models/discussionPost');
+var Thread = require('../models/Thread');
 // var Friends= require('../models/friends');
 // var majilis= require('../models/majilis');
 
@@ -188,6 +188,7 @@ router.get('/clubInfo',function(req,res,next){
 
 });
 
+//grabbing info for the club profile
 router.post('/clubProfileInfo',function(req,res,next){
     console.log("in the club info portion")
     var clubName=req.body.clubName;
@@ -208,6 +209,104 @@ router.post('/clubProfileInfo',function(req,res,next){
 
 });
 
+//post new thread
+router.post('/thread',function(req,res,next){
+    var thread=req.body.thread;
+
+    User.findOne({'username': thread.username}, function (err, doc) {
+        if (err) {
+            console.log('error!');
+            console.log(err);
+            res.json({
+                passFail: 0,
+                status: "Failed at finding one"
+            });
+        } else {
+            if (doc ) {
+                var newThread = new Thread({
+                    username:thread.username,
+                    threadTitle:thread.threadTitle,
+                    threadTime:thread.threadTime,
+                    threadDescription:thread.threadDescription,
+                    threadType:thread.threadType
+
+                });
+                console.log('Did it work?');
+                newThread.save(function(err, saved, status) {
+                    if (err) {
+                        console.log('nope');
+                        console.log(err);
+                        res.json({
+                            passFail: 0,
+                            status: "Thread creation failed."
+                        });
+                    } else {
+                        console.log(saved);
+                        res.json({
+                            passFail: 1,
+                            status: "Thread created!"
+                        });
+                    }
+                });
+            } else {
+                res.json({
+                    passFail: 0,
+                    status: "Username not found"
+                });
+            }
+        }
+    });
+
+});
+
+
+//post discussion comments
+router.post('/discussionPost',function(req,res,next){
+    var discussionPost=req.body.discussionPost;
+
+    User.findOne({'username': discussionPost.username}, function (err, doc) {
+        if (err) {
+            console.log('error!');
+            console.log(err);
+            res.json({
+                passFail: 0,
+                status: "Failed at finding one"
+            });
+        } else {
+            if (doc ) {
+                var newDiscussionPost = new DiscussionPost({
+                    username:discussionPost.username,
+                    discussionTime:discussionPost.discussionTime,
+                    discussionComment:discussionPost.discussionComment
+
+                });
+                console.log('Did it work?');
+                newDiscussionPost.save(function(err, saved, status) {
+                    if (err) {
+                        console.log('nope');
+                        console.log(err);
+                        res.json({
+                            passFail: 0,
+                            status: "Discussion post creation failed."
+                        });
+                    } else {
+                        console.log(saved);
+                        res.json({
+                            passFail: 1,
+                            status: "Discussion post created!"
+                        });
+                    }
+                });
+            } else {
+                res.json({
+                    passFail: 0,
+                    status: "Username not found"
+                });
+            }
+        }
+    });
+
+});
 module.exports = router;
 
 
